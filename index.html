@@ -15,6 +15,17 @@
     <img src="images/Hermela_Tilahun_Photo.png" alt="Portrait of Hermela Tilahun" title="Hermela Tilahun" width="200" height="200">
     <p>Software Engineer</p>
 
+    <button type="button"
+    onclick="document.getElementById('hireDialog').showModal()">Hire me</button>
+    <dialog id="hireDialog">
+    <h2>Available for internships</h2>
+    <p>I am available for internships and freelance web projects from June 2027.</p>
+    <p><a href="#contact">Send me a message</a> or <a href="files/cv.pdf"
+    download>download my CV</a>.</p>
+    <button type="button"
+    onclick="document.getElementById('hireDialog').close()">Close</button>
+    </dialog>
+
     <p>
         <a href="#about">About</a> |
         <a href="#skills">Skills</a> |
@@ -78,6 +89,25 @@
 </li>
 </ul>
 
+<h3>Skill Levels</h3>
+<p>
+<label for="lvl-html">HTML</label>
+<meter id="lvl-html" value="0.9" min="0" max="1">80%</meter>
+</p>
+<p>
+    <label for="lvl-css">CSS</label>
+    <meter id="lvl-css" value="0.7" min="0" max="1">60%</meter>
+</p>
+<p>
+<label for="lvl-python">Python</label>
+<meter id="lvl-python" value="0.5" min="0" max="1">70%</meter>
+</p>
+<p>
+<label for="lvl-js">JavaScript</label>
+<meter id="lvl-js" value="0.2" min="0" max="1" low="0.3" high="0.7"
+optimum="1">20%</meter>
+</p>
+
 <h3>My Learning Roadmap</h3>
 <ol type="1">
 <li>Python programming and fundamentals</li>
@@ -131,6 +161,11 @@ The first thing I wrote in C++ was
 <h2 id="education">Education</h2>
 <h3>BSc in Software Engineering</h3>
 <p>Addis Ababa Science and Technology University, 2023 – present</p>
+
+<p>
+    <label for="degree">Degree progress:</label>
+    <progress id="degree" value="50" max="100">50%</progress> 50%
+    </p>
 
 <table border="1" cellpadding="8" cellspacing="0">
     <caption>Academic Record — BSc in Software Engineering</caption>
