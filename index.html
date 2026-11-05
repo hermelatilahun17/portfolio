@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+    <canvas id="logo" width="120" height="120">Hermela Tilahun logo</canvas>
     <h1>Hermela Tilahun</h1>
     <img src="images/Hermela_Tilahun_Photo.png" alt="Portrait of Hermela Tilahun" title="Hermela Tilahun" width="200" height="200">
     <p>Software Engineer</p>
@@ -110,6 +111,10 @@
 <meter id="lvl-js" value="0.2" min="0" max="1" low="0.3" high="0.7"
 optimum="1">20%</meter>
 </p>
+
+<canvas id="skillsChart" width="300" height="150">
+    Chart showing my skill levels
+  </canvas>
 
 <h3>My Learning Roadmap</h3>
 <ol type="1">
@@ -318,6 +323,58 @@ href="mailto:hermela.tilahun@example.com" alt="Email">
     <p>&copy; 2026 Hermela Tilahun. All rights reserved.</p>
     <p>Last Updated: <time datetime="2026-11-05">November 5, 2026</time></p>
 </footer>
+
+
+<script>
+    // Draw the logo
+    const logoCanvas = document.getElementById("logo");
+    const logoCtx = logoCanvas.getContext("2d");
+  
+    logoCtx.fillStyle = "#1f5fa8";
+    logoCtx.fillRect(0, 0, 120, 120);
+  
+    logoCtx.beginPath();
+    logoCtx.arc(60, 60, 45, 0, 2 * Math.PI);
+    logoCtx.fillStyle = "white";
+    logoCtx.fill();
+  
+    logoCtx.fillStyle = "#1f5fa8";
+    logoCtx.font = "bold 36px Arial";
+    logoCtx.textAlign = "center";
+    logoCtx.textBaseline = "middle";
+    logoCtx.fillText("HT", 60, 62);
+  
+    // Draw the skills chart
+    const chartCanvas = document.getElementById("skillsChart");
+    const chartCtx = chartCanvas.getContext("2d");
+  
+    const skills = [
+      { name: "HTML", value: 0.9 },
+      { name: "CSS", value: 0.7 },
+      { name: "Python", value: 0.5 },
+      { name: "JavaScript", value: 0.2 }
+    ];
+  
+    const chartBottom = 120;
+    const chartHeight = 100;
+    const barWidth = 35;
+    const gap = 35;
+    const startX = 15;
+  
+    chartCtx.fillStyle = "#1f5fa8";
+    chartCtx.font = "11px Arial";
+    chartCtx.textAlign = "center";
+    chartCtx.textBaseline = "top";
+  
+    skills.forEach((skill, index) => {
+      const height = skill.value * chartHeight;
+      const x = startX + index * (barWidth + gap);
+      const y = chartBottom - height;
+  
+      chartCtx.fillRect(x, y, barWidth, height);
+      chartCtx.fillText(skill.name, x + barWidth / 2, chartBottom + 8);
+    });
+  </script>
 
 </body>
 </html>
